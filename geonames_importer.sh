@@ -60,16 +60,6 @@ usage() {
     exit -1
 }
 
-dump_db_params() {
-    echo "Database parameters being used..."
-    echo "Orden: " $action
-    echo "UserName: " $dbusername
-    echo "Password: " $dbpassword
-    echo "DB Host: " $dbhost
-    echo "DB Port: " $dbport
-    echo "DB Name: " $dbname
-}
-
 if [ $# -lt 1 ]; then
 	usage
 	exit 1
