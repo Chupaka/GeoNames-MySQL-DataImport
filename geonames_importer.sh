@@ -114,7 +114,7 @@ case $action in
         fi
         for dump in $dumps; do
             echo "Downloading $dump into $download_folder"
-            wget -P "$download_folder" "$geonames_general_data_repo/$dump"
+            wget --timestamping -P "$download_folder" "$geonames_general_data_repo/$dump"
             if [ ${dump: -4} == ".zip" ]; then
                 echo "Unzipping $dump into $data_dir"
                 unzip -u "$download_folder/$dump" -d $data_dir
@@ -137,7 +137,7 @@ case $action in
         fi
         for postal_code_file in $postal_codes; do
             echo "Downloading $postal_code_file into $download_folder/zip_codes"
-            wget -P "$download_folder/zip_codes" "$geonames_postal_code_repo/$postal_code_file"
+            wget --timestamping -P "$download_folder/zip_codes" "$geonames_postal_code_repo/$postal_code_file"
             if [ ${postal_codes: -4} == ".zip" ]; then
                 echo "Unzipping Postal Code file $postal_code_file into $download_folder/zip_codes"
                 unzip -u "$download_folder/zip_codes/$postal_code_file" -d $zip_codes_dir
