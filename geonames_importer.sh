@@ -165,7 +165,7 @@ case "$action" in
     
     import-dumps)
         echo "Importing geonames dumps into database $dbname"
-        ( cd $working_dir && mysql -h $dbhost -P $dbport -u $dbusername -p$dbpassword --local-infile=1 $dbname < "$working_dir/geonames_import_data.sql" )
+        ( cd $working_dir && mysql -h $dbhost -P $dbport -u $dbusername -p$dbpassword --local-infile=1 $dbname --force < "$working_dir/geonames_import_data.sql" )
     ;;    
     
     drop-db)
