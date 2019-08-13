@@ -83,7 +83,7 @@ FIELDS TERMINATED BY ','
 ALTER TABLE continentCodes ENABLE KEYS;
 
 -- Postal Code Data. Ignore until we are able to download them
-SELECT '########## Loading allCountries.txt... ##########';
+SELECT '########## Loading zip_codes/allCountries.txt... ##########';
 ALTER TABLE postalCodes DISABLE KEYS;
 LOAD DATA LOCAL INFILE 'data/zip_codes/allCountries.txt'
 INTO TABLE postalCodes
