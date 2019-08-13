@@ -127,7 +127,7 @@ case $action in
             wget -c -P "$download_folder" "$geonames_general_data_repo/$dump"
             if [ ${dump: -4} == ".zip" ]; then
                 echo "Unzipping $dump into $data_dir"
-                unzip "$download_folder/$dump" -d $data_dir
+                unzip -u "$download_folder/$dump" -d $data_dir
             else
                 if [ ${dump: -4} == ".txt" ]; then
                     mv "$download_folder/$dump" $data_dir
@@ -150,7 +150,7 @@ case $action in
             wget -c -P "$download_folder/zip_codes" "$geonames_postal_code_repo/$postal_code_file"
             if [ ${postal_codes: -4} == ".zip" ]; then
                 echo "Unzipping Postal Code file $postal_code_file into $download_folder/zip_codes"
-                unzip "$download_folder/zip_codes/$postal_code_file" -d $zip_codes_dir
+                unzip -u "$download_folder/zip_codes/$postal_code_file" -d $zip_codes_dir
             fi 
         done
         echo "DATA DOWNLOAD FINISHED !!"
